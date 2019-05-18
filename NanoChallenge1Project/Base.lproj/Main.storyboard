@@ -33,6 +33,9 @@
                                 <rect key="frame" x="64" y="497" width="287" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="playButton"/>
+                                <connections>
+                                    <action selector="playButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Egi-8V-L2K"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sadEmot" translatesAutoresizingMaskIntoConstraints="NO" id="r7w-gG-AXr">
                                 <rect key="frame" x="16" y="204" width="384" height="204"/>
@@ -42,6 +45,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Tsn-gF-F7m" kind="showDetail" identifier="playAreaSegue" id="fJc-gT-eLG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,14 +65,47 @@
                                 <rect key="frame" x="16" y="346" width="384" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXz-QM-y5S">
+                                <rect key="frame" x="110" y="212" width="30" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="👪"/>
+                                <connections>
+                                    <action selector="correctButtonClicked:" destination="Tsn-gF-F7m" eventType="touchDown" id="9Fg-G4-LdJ"/>
+                                    <action selector="correctButtonClicked:" destination="Tsn-gF-F7m" eventType="touchUpInside" id="bI8-bG-Qvc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-ce-8f1">
+                                <rect key="frame" x="338" y="314" width="30" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="💔"/>
+                                <connections>
+                                    <action selector="wrongButtonClicked:" destination="Tsn-gF-F7m" eventType="touchDown" id="3Xr-xX-UrV"/>
+                                    <action selector="wrongButtonClicked:" destination="Tsn-gF-F7m" eventType="touchUpInside" id="eNx-qB-kFg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKT-RB-Z95">
+                                <rect key="frame" x="131" y="558" width="116" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tZX-XZ-XNj"/>
                     </view>
+                    <connections>
+                        <outlet property="correctButton1" destination="AXz-QM-y5S" id="kCS-pd-bfr"/>
+                        <outlet property="statusButton" destination="AKT-RB-Z95" id="jR9-e2-obO"/>
+                        <outlet property="wrongButton1" destination="kVf-ce-8f1" id="Stc-d8-XNP"/>
+                        <segue destination="5Jo-Db-5jP" kind="showDetail" identifier="finishViewSegue" id="O8V-Kn-ypJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Il-xL-LWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="130"/>
+            <point key="canvasLocation" x="944.92753623188412" y="129.91071428571428"/>
         </scene>
         <!--Finish View Controller-->
         <scene sceneID="e12-0O-F9f">
